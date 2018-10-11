@@ -11,3 +11,8 @@ HEALTHCHECK --interval=5s \
 
 # tell docker what port to expose
 EXPOSE 8000
+ USER root 
+ RUN apt-get update 
+ RUN groupadd docker && gpasswd -a jenkins docker 
+ USER jenkins
+ 
